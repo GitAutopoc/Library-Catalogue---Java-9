@@ -1,0 +1,33 @@
+Immutable Collections and Private Methods in Interfaces
+Problem Statement:
+Develop a program that manages a record system for a library using immutable collections and demonstrates the use of private methods in interfaces. The core interface, LibraryCatalog, should define the standard operations to interact with book records, which are immutable.
+
+Detailed Requirements:
+
+Interface Design:
+
+The LibraryCatalog interface should include the following methods:
+addBook(Book book): Adds a new book to the catalog.
+removeBook(String isbn): Removes a book from the catalog by ISBN.
+getBook(String isbn): Returns an immutable view of a book by ISBN.
+listAllBooks(): Returns an immutable collection of all books in the catalog.
+Incorporate private methods within the LibraryCatalog interface to handle common validation checks (e.g., check if a book already exists, or if the ISBN is valid).
+Book Class:
+
+Create an immutable class Book with the following properties:
+ISBN (String)
+Title (String)
+Author (String)
+Ensure the class supports immutability (e.g., all fields are final, no setters, and deep copies for mutable objects if necessary).
+Implementation:
+
+Implement the LibraryCatalog interface in a class SimpleLibraryCatalog using an immutable map to store books.
+Use Java 9's Map.of() and Map.copyOf() methods to maintain immutability when books are added or removed.
+Demonstration:
+
+In the main method, demonstrate adding a few books, removing a book, and listing all books.
+Show how private methods in the LibraryCatalog interface are used to perform validation checks.
+Constraints:
+
+ISBNs are unique identifiers for the books.
+Handle any attempts to modify immutable collections by catching appropriate exceptions and displaying an error message.
